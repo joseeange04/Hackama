@@ -7,6 +7,7 @@ query = Model()
 
 @ampalibe.command('/')
 def main(sender_id, lang, cmd, **extends):
+    chat.get_started()
     langage = [
         QuickReply(
             title = 'Malagasy',
@@ -22,9 +23,8 @@ def main(sender_id, lang, cmd, **extends):
         )
     ]
     chat.send_quick_reply(sender_id, langage, "Français:Pour commencez choisissez votre langue./ Malagasy: Safidio aary ny fiteny ampiasainao./ English: Please choose your language.")
-    
-    chat.send_text(sender_id, translate("Merci pour votre choix", lang))
-
+    query.set_action(sender_id, None)
+#-------------Menu persistant ne doit contenir que deux paramètre-----------------------#
     persistent_menu = [
         Button(
             type = Type.postback,
@@ -35,7 +35,14 @@ def main(sender_id, lang, cmd, **extends):
             type = Type.postback,
             title = translate("Prochaine festival vacciné", lang),
             payload = Payload('/festival')
-        ),
+        )
+
+    ]
+    chat.persistent_menu(sender_id, persistent_menu)
+
+
+
+""" ,
         Button(
             type = Type.postback,
             title = "Statistique de vaccination contre covid-19",
@@ -45,10 +52,5 @@ def main(sender_id, lang, cmd, **extends):
             type = Type.postback,
             title = "Destination touristique sécurisé",
             payload = Payload('/destination')
-        )
-
-    ]
-    chat.persistent_menu(sender_id, persistent_menu)
-
-
-
+        ) 
+"""
