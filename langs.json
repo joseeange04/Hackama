@@ -1,0 +1,31 @@
+{
+
+    "langue": {
+        "en": "Thank'you for your choice", 
+        "fr": "Merci pour votre choix",
+        "mg": "Misaotra tamin'ny safidinao"
+    },
+    "info":{
+        "en": "Informations about vaccinations",
+        "fr": "Information sur les vaccins",
+        "mg": "Fampahafantarana mahakasika ny vaksiny"
+    },
+    "festival":{
+        "en": "Next festival vaccinated",
+        "fr": "Prochaine festival vacciné",
+        "mg": "Ireo fety ahitana fanaovam-baksiny manaraka"
+    },
+    "statistique":{
+        "en": "Statistics of vaccination against covid-19",
+        "fr": "Statistique de vaccination contre covid-19",
+        "mg": "Antontanisa mahakasika ny vaksiny fanefitry ny covid-19"
+    },
+    "destination":{
+        "en": "Secure tourist destination",
+        "fr": "Destination touristique sécurisé",
+        "mg": "Ireo toeram-pizahan-tany voaharo sy milamina"
+    }
+
+
+}
+
