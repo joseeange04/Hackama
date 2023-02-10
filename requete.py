@@ -4,7 +4,7 @@ class Requete (Model):
         """
             Connexion à notre base de donnée
         """
-        Model(self, conf)
+        Model.__init__(self, conf)
 
     @Model.verif_db
     def Get_Vaccination_list(self):
@@ -19,3 +19,17 @@ class Requete (Model):
         result = self.cursor.fetchall()
         self.db.commit()
         return result
+
+    @Model.verif_db
+    def Get_Vaccin_details(self, id_vaccin):
+        """
+            Explication sur les vaccins
+        """
+        req = """
+                SELECT pdf FROM vaccins WHERE id_vaccin = %s 
+        """
+
+        self.cursor.execute(req, (id_vaccin,))
+        result = self.cursor.fetchone()
+        self.db.commit()
+        return result[0]
